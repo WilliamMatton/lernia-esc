@@ -1,0 +1,24 @@
+{
+  "name": "lernia-esc-sass",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/WilliamMatton/lernia-esc#readme",
+  "bugs": {
+    "url": "https://github.com/WilliamMatton/lernia-esc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliamMatton/lernia-esc.git"
+  },
+  "license": "ISC",
+  "author": "William Matton",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "sass --no-source-map src/main.scss output.css",
+    "watch-sass": "sass --watch --no-source-map src/main.scss output.css"
+  },
+  "dependencies": {
+    "sass": "^1.93.2"
+  }
+}
