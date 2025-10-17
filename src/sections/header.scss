@@ -21,7 +21,7 @@
     margin-right: calc(100vw - 250px);
     color: white;
 
-    @include resolutionThreshold(800px) {
+    @include resolutionThresholdX(800px) {
         font-size: 40px;
         margin-top: 61px;
         margin-right: 0;
@@ -38,7 +38,7 @@
     align-items: center;
     background-color: $specification_color_dark;
 
-    @include resolutionThreshold(800px) {
+    @include resolutionThresholdX(800px) {
         display: flex;
     }
 }

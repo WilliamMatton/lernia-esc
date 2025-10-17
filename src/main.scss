@@ -17,3 +17,58 @@ body {
     max-height: 650px;
     object-fit: cover;
 }
+
+.buttonGroupTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 37px 0 67px 0;
+
+    @include resolutionThresholdX(800px) {
+        flex-direction: row;
+        justify-self: center;
+        gap: 17px;
+        padding: 0;
+    }
+}
+
+@mixin onlineChallengesButtonSmall {
+    width: 150px;
+    height: 20px;
+    background: none;
+    border: none;
+    font-family: $specification_font;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: $specification_color_flatBlue;
+}
+
+@mixin blockButtonTemplate {
+    border: none;
+    border-radius: 4px;
+    font-family: $specification_font;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.buttonGroupTop__onlineChallengesButton, .buttonGroupBottom__onlineChallengesButton {
+    @include onlineChallengesButtonSmall;
+
+    @include resolutionThresholdX(481px) {
+        width: $block_button_large_width;
+        height: $block_button_large_height;
+        background-color: $specification_color_red;
+        text-decoration: none;
+        color: white;
+        @include blockButtonTemplate;
+    }
+}
+
+.buttonGroupTop__onSiteChallengesButton, .buttonGroupBottom__onSiteChallengesButton {
+    width: $block_button_large_width;
+    height: $block_button_large_height;
+    background-color: $specification_color_lightBlue;
+    @include blockButtonTemplate;
+}
