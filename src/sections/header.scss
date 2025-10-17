@@ -20,10 +20,8 @@
     margin-top: 25px;
     margin-right: calc(100vw - 250px);
     color: white;
-}
 
-@media screen and (min-width: 800px) {
-    .header__logoText {
+    @include resolutionThreshold(800px) {
         font-size: 40px;
         margin-top: 61px;
         margin-right: 0;
@@ -39,6 +37,10 @@
     justify-content: space-between;
     align-items: center;
     background-color: $specification_color_dark;
+
+    @include resolutionThreshold(800px) {
+        display: flex;
+    }
 }
 
 .headerButtons__button {
@@ -52,10 +54,4 @@
 
 .headerButtons__button:hover {
     color: #8ACFE5;
-}
-
-@media screen and (min-width: 800px) {
-    .headerButtons {
-        display: flex;
-    }
 }
