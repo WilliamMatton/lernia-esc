@@ -56,36 +56,56 @@
   color: #8ACFE5;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+.buttonGroupTop {
+  display: grid;
+  grid-template-columns: calc((100vw - 308px) / 2) 308px calc((100vw - 308px) / 2);
+  grid-template-rows: auto 96px auto;
+  margin-bottom: 67px;
+}
+@media screen and (min-width: 800px) {
+  .buttonGroupTop {
+    grid-template-columns: calc((100vw - 633px) / 2) 308px 17px 308px calc((100vw - 633px) / 2);
+    grid-template-rows: auto auto;
+    margin-bottom: 109px;
+  }
 }
 
-.app {
-  font-family: "Roboto";
-}
-
-.app__imageTop {
+.buttonGroupTop__image {
+  grid-column: 1/4;
   width: 100%;
   height: auto;
   min-height: 274px;
   max-height: 650px;
   object-fit: cover;
-}
-
-.buttonGroupTop {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  padding: 37px 0 67px 0;
+  margin-bottom: 35px;
 }
 @media screen and (min-width: 800px) {
-  .buttonGroupTop {
-    flex-direction: row;
-    justify-self: center;
-    gap: 17px;
-    padding: 0;
+  .buttonGroupTop__image {
+    grid-column: 1/6;
+    grid-row: 1/3;
+  }
+}
+
+.buttonGroupTop__onSiteChallengesButton {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+@media screen and (min-width: 800px) {
+  .buttonGroupTop__onSiteChallengesButton {
+    grid-column: 4/5;
+    grid-row: 2/3;
+  }
+}
+
+.buttonGroupTop__onlineChallengesButton {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  justify-self: center;
+}
+@media screen and (min-width: 800px) {
+  .buttonGroupTop__onlineChallengesButton {
+    grid-column: 2/3;
+    grid-row: 2/3;
   }
 }
 
@@ -100,7 +120,7 @@ body {
   text-decoration: underline;
   color: #36769D;
 }
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 800px) {
   .buttonGroupTop__onlineChallengesButton, .buttonGroupBottom__onlineChallengesButton {
     width: 308px;
     height: 66px;
@@ -124,4 +144,29 @@ body {
   font-family: "Roboto";
   font-weight: bold;
   font-size: 24px;
+}
+
+.buttonGroupBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 56px;
+}
+@media screen and (min-width: 800px) {
+  .buttonGroupBottom {
+    flex-direction: row-reverse;
+    justify-self: center;
+    gap: 17px;
+    margin-bottom: 82px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  font-family: "Roboto";
 }

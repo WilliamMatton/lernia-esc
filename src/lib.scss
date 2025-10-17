@@ -15,3 +15,11 @@ $block_button_small_height: 44px;
         @content;
     }
 }
+
+@mixin blockButtonTemplate {
+    border: none;
+    border-radius: 4px;
+    font-family: $specification_font;
+    font-weight: bold;
+    font-size: 24px;
+}

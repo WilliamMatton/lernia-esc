@@ -1,0 +1,97 @@
+@use '../lib.scss' as *;
+
+.buttonGroupTop {
+    display: grid;
+    grid-template-columns: calc((100vw - 308px) / 2) 308px calc((100vw - 308px) / 2);
+    grid-template-rows: auto 96px auto;
+    margin-bottom: 67px;
+
+    @include resolutionThresholdX(800px) {
+        grid-template-columns: calc((100vw - 633px) / 2) 308px 17px 308px calc((100vw - 633px) / 2);
+        grid-template-rows: auto auto;
+        margin-bottom: 109px;
+    }
+}
+
+.buttonGroupTop__image {
+    grid-column: 1 / 4;
+    width: 100%;
+    height: auto;
+    min-height: 274px;
+    max-height: 650px;
+    object-fit: cover;
+    margin-bottom: 35px;
+
+    @include resolutionThresholdX(800px) {
+        grid-column: 1 / 6;
+        grid-row: 1 / 3;
+    }
+}
+
+.buttonGroupTop__onSiteChallengesButton {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+
+    @include resolutionThresholdX(800px) {
+        grid-column: 4 / 5;
+        grid-row: 2 / 3;
+    }
+}
+
+.buttonGroupTop__onlineChallengesButton {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    justify-self: center;
+
+    @include resolutionThresholdX(800px) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+}
+
+@mixin onlineChallengesButtonSmall {
+    width: 150px;
+    height: 20px;
+    background: none;
+    border: none;
+    font-family: $specification_font;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: $specification_color_flatBlue;
+}
+
+.buttonGroupTop__onlineChallengesButton, .buttonGroupBottom__onlineChallengesButton {
+    @include onlineChallengesButtonSmall;
+
+    @include resolutionThresholdX(800px) {
+        width: $block_button_large_width;
+        height: $block_button_large_height;
+        background-color: $specification_color_red;
+        text-decoration: none;
+        color: white;
+        @include blockButtonTemplate;
+    }
+}
+
+.buttonGroupTop__onSiteChallengesButton, .buttonGroupBottom__onSiteChallengesButton {
+    width: $block_button_large_width;
+    height: $block_button_large_height;
+    background-color: $specification_color_lightBlue;
+    @include blockButtonTemplate;
+}
+
+.buttonGroupBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 56px;
+
+    @include resolutionThresholdX(800px) {
+        flex-direction: row-reverse;
+        justify-self: center;
+        gap: 17px;
+        margin-bottom: 82px;
+    }
+}
