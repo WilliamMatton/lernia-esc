@@ -9,3 +9,11 @@ body {
 .app {
     font-family: $specification_font;
 }
+
+.app__imageTop {
+    width: 100%;
+    height: auto;
+    min-height: 274px;
+    max-height: 650px;
+    object-fit: cover;
+}
