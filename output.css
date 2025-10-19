@@ -265,6 +265,11 @@
   padding: 0 17px 0 18px;
   display: flex;
 }
+@media screen and (min-width: 1280px) {
+  .rating {
+    padding-right: 11px;
+  }
+}
 
 .rating__star {
   margin: 0 5px 0 5px;
@@ -275,6 +280,11 @@
 .rating__participants {
   margin: 0 0 0 9px;
   font-size: 14px;
+}
+@media screen and (min-width: 1280px) {
+  .rating__participants {
+    margin-left: auto;
+  }
 }
 
 .challenge__description {

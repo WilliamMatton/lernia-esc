@@ -53,6 +53,10 @@
 .rating {
     @include challengePadding;
     display: flex;
+
+    @include resolutionThresholdX(1280px) {
+        padding-right: 11px;
+    }
 }
 
 .rating__star {
@@ -64,6 +68,10 @@
 .rating__participants {
     margin: 0 0 0 9px;
     font-size: 14px;
+
+    @include resolutionThresholdX(1280px) {
+        margin-left: auto;
+    }
 }
 
 .challenge__description {
