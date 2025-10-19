@@ -343,7 +343,7 @@
 .details {
   display: grid;
   grid-template-rows: auto;
-  margin-bottom: 100px;
+  margin-bottom: 36px;
 }
 @media screen and (min-width: 1000px) {
   .details {
