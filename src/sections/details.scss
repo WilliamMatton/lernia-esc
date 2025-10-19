@@ -1,0 +1,64 @@
+@use '../lib.scss' as *;
+
+.details {
+    display: grid;
+    grid-template-rows: auto;
+    margin-bottom: 100px;
+
+    @include resolutionThresholdX(1000px) {
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: auto auto;
+        margin-bottom: 183px;
+        min-height: 920px;
+    }
+}
+
+.details__image1, .details__image2 {
+    width: 100%;
+    height: auto;
+    max-height: 460px;
+    object-fit: cover;
+
+    @include resolutionThresholdX(1000px) {
+        height: 100%;
+    }
+}
+
+.details__image2 {
+    @include resolutionThresholdX(1000px) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+}
+
+.indepthOnSite, .indepthOnline {
+    padding: 0 20px 0 20px;
+    margin: 30px 0 64px 0;
+
+    @include resolutionThresholdX(1000px) {
+        margin: 57px 0;
+        padding: 0 calc((100% - 416px) / 2) 0;
+    }
+}
+
+.indepthOnSite__title, .indepthOnline__title {
+    margin: 0;
+    font-size: 32px;
+}
+
+.indepthOnSite__description, .indepthOnline__description {
+    margin: 30px 0 55px;
+    font-size: 24px;
+
+    @include resolutionThresholdX(1000px) {
+        margin: 25px 0;
+    }
+}
+
+.indepthOnSite__bookButton, .indepthOnline__seeChallengesButton {
+    @include blockButtonTemplate;
+    width: $block_button_large_width;
+    height: $block_button_large_height;
+    color: white;
+    background-color: $specification_color_red;
+}
