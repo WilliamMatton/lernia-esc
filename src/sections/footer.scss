@@ -1,0 +1,65 @@
+@use '../lib.scss' as *;
+
+.footer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    padding: 64px 22px 69px;
+    color: white;
+    background-color: $specification_color_dark;
+
+    @include resolutionThresholdX(800px) {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto;
+        padding: 146px 109px 167px;
+    }
+    
+    @include resolutionThresholdX(1280px) {
+        padding: 146px calc((100vw - 1062px) / 2) 167px;
+    }
+}
+
+.footerInfo {
+    max-width: 439px;
+    
+    @include resolutionThresholdX(800px) {
+        max-width: 416px;
+    }
+}
+
+.footerInfo, .siteMap {
+    margin-bottom: 40px;
+
+    @include resolutionThresholdX(800px) {
+        margin: 0;
+    }
+}
+
+.footerInfo__title, .siteMap__title, .socials__title {
+    font-size: 18px;
+    margin: 0 0 7px;
+}
+
+.footerInfo__text {
+    margin: 0;
+    font-size: 18px;
+}
+
+.siteMap, .socials {
+    display: flex;
+    flex-direction: column;
+
+    @include resolutionThresholdX(800px) {
+        justify-self: center;
+    }
+}
+
+.siteMap a:nth-of-type(3) {
+    margin-bottom: 23px;
+}
+
+.siteMap__link, .socials__link {
+    text-decoration: none;
+    color: white;
+}
