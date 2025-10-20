@@ -29,12 +29,11 @@
 }
 
 .nav {
-    width: 66%;
+    width: 84%;
     height: 72px;
-    padding: 0 17% 0 17%;
+    padding: 0 8%;
     display: none;
-    justify-self: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     background-color: $specification_color_dark;
 
@@ -51,5 +50,5 @@
 }
 
 .nav__link:hover {
-    color: #8ACFE5;
+    color: $specification_color_lightBlue;
 }
