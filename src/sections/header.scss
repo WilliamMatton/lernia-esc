@@ -28,7 +28,7 @@
     }
 }
 
-.headerButtons {
+.nav {
     width: 66%;
     height: 72px;
     padding: 0 17% 0 17%;
@@ -43,15 +43,13 @@
     }
 }
 
-.headerButtons__button {
-    border: none;
-    background: none;
-    font-family: $specification_font;
+.nav__link {
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none;
     color: white;
 }
 
-.headerButtons__button:hover {
+.nav__link:hover {
     color: #8ACFE5;
 }

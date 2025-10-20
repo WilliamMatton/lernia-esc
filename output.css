@@ -27,7 +27,7 @@
   }
 }
 
-.headerButtons {
+.nav {
   width: 66%;
   height: 72px;
   padding: 0 17% 0 17%;
@@ -38,21 +38,19 @@
   background-color: #011827;
 }
 @media screen and (min-width: 800px) {
-  .headerButtons {
+  .nav {
     display: flex;
   }
 }
 
-.headerButtons__button {
-  border: none;
-  background: none;
-  font-family: "Roboto";
+.nav__link {
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
   color: white;
 }
 
-.headerButtons__button:hover {
+.nav__link:hover {
   color: #8ACFE5;
 }
 
