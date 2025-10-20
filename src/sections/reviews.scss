@@ -3,22 +3,17 @@
 .reviews {
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: auto;
     gap: 21px;
     padding: 0 20px 0;
     margin-bottom: 105px;
 }
 
-@mixin review {
-    grid-auto-flow: row;
-    max-width: 522px;
-}
-
 .review1 {
+    max-width: 522px;
     display: grid;
+    grid-auto-flow: row;
     grid-column: 1 / 2;
     justify-self: center;
-    @include review;
 
     @include resolutionThresholdX(800px) {
         justify-self: right;
@@ -26,10 +21,11 @@
 }
 
 .review2 {
+    max-width: 522px;
     display: none;
+    grid-auto-flow: row;
     grid-column: 2 / 3;
     justify-self: left;
-    @include review;
 
     @include resolutionThresholdX(800px) {
         display: grid;
