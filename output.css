@@ -223,8 +223,13 @@
   margin: 8px 0 0;
 }
 
+.carousel {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .challenges {
-  max-width: 1280px;
+  max-width: 1170px;
   display: grid;
   grid-auto-flow: column;
   gap: 20px;
@@ -239,12 +244,24 @@
     gap: 40px;
   }
 }
+@media screen and (min-width: 800px) {
+  .challenges {
+    margin: 85px auto;
+  }
+}
 @media screen and (min-width: 1280px) {
   .challenges {
     overflow-x: hidden;
-    margin: 85px auto;
     justify-content: center;
   }
+}
+
+.carouselHeader__heading {
+  margin: 0;
+  padding: 0 25px 0;
+  font-size: 32px;
+  font-weight: normal;
+  text-align: center;
 }
 
 .challenge {
@@ -512,12 +529,4 @@ body {
 
 .app {
   font-family: "Roboto";
-}
-
-.app__challengesTitle {
-  margin: 0;
-  padding: 0 25px 0;
-  font-size: 32px;
-  font-weight: normal;
-  text-align: center;
 }

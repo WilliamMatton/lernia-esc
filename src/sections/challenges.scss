@@ -1,7 +1,12 @@
 @use '../lib.scss' as *;
 
+.carousel {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
 .challenges {
-    max-width: 1280px;
+    max-width: 1170px;
     display: grid;
     grid-auto-flow: column;
     gap: 20px;
@@ -15,11 +20,22 @@
         gap: 40px;
     }
 
+    @include resolutionThresholdX(800px) {
+        margin: 85px auto;
+    }
+
     @include resolutionThresholdX(1280px) {
         overflow-x: hidden;
-        margin: 85px auto;
         justify-content: center;
     }
+}
+
+.carouselHeader__heading {
+    margin: 0;
+    padding: 0 25px 0;
+    font-size: 32px;
+    font-weight: normal;
+    text-align: center;
 }
 
 .challenge {
