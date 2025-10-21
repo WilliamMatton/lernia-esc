@@ -4,11 +4,16 @@
     max-width: 1280px;
     display: grid;
     grid-auto-flow: column;
-    gap: 40px;
+    gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 10px 52px;
+    padding: 10px 20px;
     margin: 35px 0;
+
+    @include resolutionThresholdX(480px) {
+        padding: 10px 52px;
+        gap: 40px;
+    }
 
     @include resolutionThresholdX(1280px) {
         overflow-x: hidden;
