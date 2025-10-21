@@ -5,7 +5,11 @@
     grid-auto-flow: column;
     gap: 21px;
     padding: 0 20px 0;
-    margin-bottom: 105px;
+    margin: 65px 0 105px;
+
+    @include resolutionThresholdX(800px) {
+        margin: 105px 0;
+    }
 }
 
 .review1 {

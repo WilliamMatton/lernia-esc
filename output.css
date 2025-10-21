@@ -57,13 +57,11 @@
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: auto 96px auto;
-  margin-bottom: 67px;
 }
 @media screen and (min-width: 800px) {
   .buttonGroupTop {
     grid-template-columns: auto 308px 17px 308px auto;
     grid-template-rows: auto auto;
-    margin-bottom: 109px;
   }
 }
 
@@ -174,7 +172,12 @@
   grid-auto-flow: column;
   gap: 21px;
   padding: 0 20px 0;
-  margin-bottom: 105px;
+  margin: 65px 0 105px;
+}
+@media screen and (min-width: 800px) {
+  .reviews {
+    margin: 105px 0;
+  }
 }
 
 .review1 {
