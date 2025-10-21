@@ -465,12 +465,12 @@
   max-width: 1062px;
   display: grid;
   grid-auto-flow: row;
-  gap: 10px;
   margin: 0 auto;
 }
 @media screen and (min-width: 800px) {
   .footer__content {
     grid-auto-flow: column;
+    grid-template-rows: auto;
   }
 }
 
@@ -480,6 +480,7 @@
 @media screen and (min-width: 800px) {
   .footerInfo {
     max-width: 416px;
+    grid-row: 1/3;
   }
 }
 
@@ -492,7 +493,7 @@
   }
 }
 
-.footerInfo__title, .siteMap__title, .socials__title {
+.footerInfo__title, .footerContent__siteMapTitle, .footerContent__socialsTitle {
   font-size: 18px;
   margin: 0 0 7px;
 }
@@ -505,11 +506,6 @@
 .siteMap, .socials {
   display: flex;
   flex-direction: column;
-}
-@media screen and (min-width: 800px) {
-  .siteMap, .socials {
-    justify-self: center;
-  }
 }
 
 .siteMap a:nth-of-type(3) {
