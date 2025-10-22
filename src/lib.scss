@@ -10,7 +10,12 @@ $block_button_large_height: 66px;
 $block_button_small_width: 180px;
 $block_button_small_height: 44px;
 
-@mixin resolutionThresholdX($min-width) {
+$screen_width_480: 480px;
+$screen_width_800: 800px;
+$screen_width_1000: 1000px;
+$screen_width_1280: 1280px;
+
+@mixin from-width($min-width) {
     @media screen and (min-width: $min-width) {
         @content;
     }
