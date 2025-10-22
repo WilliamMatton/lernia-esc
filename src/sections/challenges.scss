@@ -15,16 +15,16 @@
     padding: 10px 20px;
     margin: 35px 0;
 
-    @include resolutionThresholdX(480px) {
+    @include from-width($screen_width_480) {
         padding: 10px 52px;
         gap: 40px;
     }
 
-    @include resolutionThresholdX(800px) {
+    @include from-width($screen_width_800) {
         margin: 85px auto;
     }
 
-    @include resolutionThresholdX(1280px) {
+    @include from-width($screen_width_1280) {
         overflow-x: hidden;
         justify-content: center;
     }
@@ -71,7 +71,7 @@
     @include challengePadding;
     display: flex;
 
-    @include resolutionThresholdX(1280px) {
+    @include from-width($screen_width_1280) {
         padding-right: 11px;
     }
 }
@@ -86,7 +86,7 @@
     margin: 0 0 0 9px;
     font-size: 14px;
 
-    @include resolutionThresholdX(1280px) {
+    @include from-width($screen_width_1280) {
         margin-left: auto;
     }
 }

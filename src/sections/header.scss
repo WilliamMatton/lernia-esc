@@ -21,7 +21,7 @@
     margin-top: 25px;
     color: white;
 
-    @include resolutionThresholdX(800px) {
+    @include from-width($screen_width_800) {
         width: auto;
         font-size: 40px;
         margin-top: 61px;
@@ -37,7 +37,7 @@
     align-items: center;
     background-color: $specification_color_dark;
 
-    @include resolutionThresholdX(800px) {
+    @include from-width($screen_width_800) {
         display: flex;
     }
 }

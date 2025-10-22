@@ -6,13 +6,13 @@
     grid-template-rows: auto;
     margin-bottom: 36px;
 
-    @include resolutionThresholdX(1000px) {
+    @include from-width($screen_width_1000) {
         grid-template-columns: 50% 50%;
         grid-auto-flow: row;
         margin-bottom: 183px;
     }
 
-    @include resolutionThresholdX(1280px) {
+    @include from-width($screen_width_1280) {
         margin: 0 auto 183px;
     }
 }
@@ -23,14 +23,14 @@
     max-height: 460px;
     object-fit: cover;
 
-    @include resolutionThresholdX(1000px) {
+    @include from-width($screen_width_1000) {
         max-width: 640px;
         height: 100%;
     }
 }
 
 .details__image2 {
-    @include resolutionThresholdX(1000px) {
+    @include from-width($screen_width_1000) {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
     }
@@ -40,7 +40,7 @@
     padding: 0 20px;
     margin: 30px 0 64px 0;
 
-    @include resolutionThresholdX(1000px) {
+    @include from-width($screen_width_1000) {
         height: 346px;
         width: 416px;
         margin: 57px auto;
@@ -57,7 +57,7 @@
     margin: 30px 0 55px;
     font-size: 24px;
 
-    @include resolutionThresholdX(1000px) {
+    @include from-width($screen_width_1000) {
         margin: 25px 0;
     }
 }
