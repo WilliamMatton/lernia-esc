@@ -4,6 +4,7 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: auto 96px auto;
+    justify-items: center;
 
     @include from-width($screen_width_800) {
         grid-template-columns: auto 308px 17px 308px auto;
@@ -47,7 +48,6 @@
 .buttonGroupTop__onlineChallengesButton {
     grid-row: 3 / 4;
     grid-column: 2 / 3;
-    justify-self: center;
 
     @include from-width($screen_width_800) {
         grid-column: 2 / 3;
@@ -55,7 +55,7 @@
     }
 }
 
-@mixin onlineChallengesButtonSmall {
+@mixin text-button {
     width: 150px;
     height: 20px;
     background: none;
@@ -68,7 +68,7 @@
 }
 
 .buttonGroupTop__onlineChallengesButton, .buttonGroupBottom__onlineChallengesButton {
-    @include onlineChallengesButtonSmall;
+    @include text-button;
 
     @include from-width($screen_width_800) {
         width: $block_button_large_width;

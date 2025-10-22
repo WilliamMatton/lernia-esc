@@ -57,6 +57,7 @@
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: auto 96px auto;
+  justify-items: center;
 }
 @media screen and (min-width: 800px) {
   .buttonGroupTop {
@@ -105,7 +106,6 @@
 .buttonGroupTop__onlineChallengesButton {
   grid-row: 3/4;
   grid-column: 2/3;
-  justify-self: center;
 }
 @media screen and (min-width: 800px) {
   .buttonGroupTop__onlineChallengesButton {
