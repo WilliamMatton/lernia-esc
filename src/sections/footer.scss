@@ -15,6 +15,7 @@
     display: grid;
     grid-auto-flow: row;
     margin: 0 auto;
+    gap: 0 20px;
     
     @include from-width($screen_width_800) {
         grid-auto-flow: column;
