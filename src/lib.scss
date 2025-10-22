@@ -21,7 +21,7 @@ $screen_width_1280: 1280px;
     }
 }
 
-@mixin blockButtonTemplate {
+@mixin block-button-template {
     border: none;
     border-radius: 4px;
     font-family: $specification_font;
