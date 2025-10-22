@@ -285,7 +285,7 @@
 }
 
 .challengeHeader__heading {
-  padding: 0 17px 0 18px;
+  padding: 0 17px 0 17px;
   font-weight: normal;
   font-size: 28px;
   padding-top: 12px;
@@ -293,7 +293,7 @@
 }
 
 .rating {
-  padding: 0 17px 0 18px;
+  padding: 0 17px 0 17px;
   display: flex;
 }
 @media screen and (min-width: 1280px) {
@@ -319,7 +319,7 @@
 }
 
 .challenge__description {
-  padding: 0 17px 0 18px;
+  padding: 0 17px 0 17px;
   margin: 18px 0 23px;
   font-size: 18px;
 }
