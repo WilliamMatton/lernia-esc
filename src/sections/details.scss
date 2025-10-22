@@ -63,7 +63,7 @@
 }
 
 .indepthOnSite__bookButton, .indepthOnline__seeChallengesButton {
-    @include blockButtonTemplate;
+    @include block-button-template;
     width: $block_button_large_width;
     height: $block_button_large_height;
     color: white;
