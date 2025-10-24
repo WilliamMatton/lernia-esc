@@ -37,8 +37,14 @@
 }
 
 .indepthOnSite, .indepthOnline {
-    padding: 0 20px;
+    padding: 0 6px;
     margin: 30px 0 64px 0;
+    text-align: center;
+
+    @include from-width(480px) {
+        padding: 0 20px;
+        text-align: left;
+    }
 
     @include from-width($screen_width_1000) {
         height: 346px;
