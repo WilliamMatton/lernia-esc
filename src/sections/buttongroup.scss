@@ -60,20 +60,12 @@
     }
 }
 
-@mixin text-button {
-    width: 150px;
-    height: 20px;
-    background: none;
-    border: none;
+.buttonGroupTop__onlineChallengesButton, .buttonGroupBottom__onlineChallengesButton {
     font-family: $specification_font;
     font-size: 16px;
     font-weight: bold;
-    text-decoration: underline;
+    text-align: center;
     color: $specification_color_flatBlue;
-}
-
-.buttonGroupTop__onlineChallengesButton, .buttonGroupBottom__onlineChallengesButton {
-    @include text-button;
 
     @include from-width($screen_width_800) {
         width: $block_button_large_width;
