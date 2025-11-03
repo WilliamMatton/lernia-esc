@@ -68,8 +68,8 @@
     color: $specification_color_flatBlue;
 
     @include from-width($screen_width_800) {
-        width: $block_button_large_width;
-        height: $block_button_large_height;
+        width: $button_large_width;
+        height: $button_large_height;
         background-color: $specification_color_red;
         text-decoration: none;
         color: white;
@@ -78,8 +78,8 @@
 }
 
 .buttonGroupTop__onSiteChallengesButton, .buttonGroupBottom__onSiteChallengesButton {
-    width: $block_button_large_width;
-    height: $block_button_large_height;
+    width: $button_large_width;
+    height: $button_large_height;
     background-color: $specification_color_lightBlue;
     color: black;
     @include button-template;

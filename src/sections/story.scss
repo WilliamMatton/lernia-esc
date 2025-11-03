@@ -21,8 +21,8 @@
 
 .story__readFullStoryButton {
     @include button-template;
-    width: $block_button_large_width;
-    height: $block_button_large_height;
+    width: $button_large_width;
+    height: $button_large_height;
     border: 2px solid $specification_color_lightBlue;
     background-color: $specification_color_dark;
     color: $specification_color_lightBlue;

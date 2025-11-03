@@ -119,14 +119,10 @@
 }
 
 .buttonGroupTop__onlineChallengesButton, .buttonGroupBottom__onlineChallengesButton {
-  width: 150px;
-  height: 20px;
-  background: none;
-  border: none;
   font-family: "Roboto";
   font-size: 16px;
   font-weight: bold;
-  text-decoration: underline;
+  text-align: center;
   color: #36769D;
 }
 @media screen and (min-width: 800px) {
@@ -342,7 +338,7 @@
   text-decoration: none;
   justify-self: right;
   font-size: 16px;
-  width: 179px;
+  width: 180px;
   height: 44px;
   margin: 0 18px 12px 0;
   color: white;
