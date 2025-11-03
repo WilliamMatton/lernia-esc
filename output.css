@@ -141,6 +141,9 @@
     font-family: "Roboto";
     font-weight: bold;
     font-size: 24px;
+    align-content: center;
+    text-align: center;
+    text-decoration: none;
   }
 }
 
@@ -154,6 +157,9 @@
   font-family: "Roboto";
   font-weight: bold;
   font-size: 24px;
+  align-content: center;
+  text-align: center;
+  text-decoration: none;
 }
 
 .buttonGroupBottom {
@@ -331,6 +337,9 @@
   font-family: "Roboto";
   font-weight: bold;
   font-size: 24px;
+  align-content: center;
+  text-align: center;
+  text-decoration: none;
   justify-self: right;
   font-size: 16px;
   width: 179px;
@@ -365,6 +374,9 @@
   font-family: "Roboto";
   font-weight: bold;
   font-size: 24px;
+  align-content: center;
+  text-align: center;
+  text-decoration: none;
   width: 308px;
   height: 66px;
   border: 2px solid #8ACFE5;
@@ -452,6 +464,10 @@
   font-family: "Roboto";
   font-weight: bold;
   font-size: 24px;
+  align-content: center;
+  text-align: center;
+  text-decoration: none;
+  display: block;
   width: 308px;
   height: 66px;
   color: white;

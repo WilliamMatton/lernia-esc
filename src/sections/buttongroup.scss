@@ -81,7 +81,7 @@
         background-color: $specification_color_red;
         text-decoration: none;
         color: white;
-        @include block-button-template;
+        @include button-template;
     }
 }
 
@@ -90,7 +90,7 @@
     height: $block_button_large_height;
     background-color: $specification_color_lightBlue;
     color: black;
-    @include block-button-template;
+    @include button-template;
 }
 
 .buttonGroupBottom {

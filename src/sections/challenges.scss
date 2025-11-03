@@ -98,7 +98,7 @@
 }
 
 .challenge__bookButton {
-    @include block-button-template;
+    @include button-template;
     justify-self: right;
     font-size: 16px;
     width: 179px;

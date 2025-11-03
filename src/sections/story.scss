@@ -20,7 +20,7 @@
 }
 
 .story__readFullStoryButton {
-    @include block-button-template;
+    @include button-template;
     width: $block_button_large_width;
     height: $block_button_large_height;
     border: 2px solid $specification_color_lightBlue;
