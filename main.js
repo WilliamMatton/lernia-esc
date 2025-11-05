@@ -1,4 +1,6 @@
 const sheet = document.styleSheets[1];
+const root = document.querySelector("html");
+const main = document.querySelector(".app");
 const header = document.querySelector(".header");
 const nav = document.querySelector(".nav");
 let navMenuButton;
@@ -27,19 +29,52 @@ window.addEventListener("load", () => {
     closeButton.addEventListener("click", CloseNavMenu);
     nav.prepend(closeButton);
 
+    sheet.insertRule(
+        `.backgroundAnimation {
+            animation-name: backgroundFadeOut;
+            animation-duration: 0.1s;
+            animation-fill-mode: both;
+        }`
+        , sheet.cssRules.length
+    );
+
+    sheet.insertRule(
+        `@keyframes backgroundFadeOut {
+            100% {
+                opacity: 60%;
+            }
+        }`,
+        sheet.cssRules.length
+    );
+
+    sheet.insertRule(
+        `.scrollLock {
+            height: 100%;
+            overflow: hidden;
+        }`
+        , sheet.cssRules.length
+    );
+
     CreateMobileNavMenuRules();
-    UpdateNavMenuVisibility(navMenuPopupMaxSize);
 });
 
 function CreateMobileNavMenuRules() {
     sheet.insertRule(
-        ".header__mobileMenu { width: 51px; height: 32px; margin: 27px 20px 0 auto; }",
-        4
+        `.header__mobileMenu {
+            width: 51px;
+            height: 32px;
+            margin: 27px 20px 0 auto;
+        }`
+        , 4
     );
 
     sheet.insertRule(
-        "@media screen and (min-width: 800px) { .header__mobileMenu { display: none; } }",
-        5
+        `@media screen and (min-width: 800px) {
+            .header__mobileMenu {
+                display: none;
+            }
+        }`
+        , 5
     );
 
     const navMenuRule = sheet.cssRules[6];
@@ -59,44 +94,98 @@ function CreateMobileNavMenuRules() {
     navMenuRule.style.setProperty("box-shadow", "0px 0px 20px rgba(0, 0, 0, 0.4)");
 
     sheet.insertRule(
-        ".navAnimation { display: flex: flex-direction: column; opacity: 0; z-index: 1; animation-name: navFadeIn; animation-fill-mode: both; animation-duration: 0.2s; animation-delay: 0.1s; }",
-        7
+        `.navAnimation {
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            z-index: 1;
+            animation-name: navFadeIn;
+            animation-fill-mode: both;
+            animation-duration: 0.2s;
+            animation-delay: 0.1s;
+        }`
+        , 7
     );
 
     sheet.insertRule(
-        "@keyframes navFadeIn { 0% { opacity: 0%; transform: scale(0.98); } 100% { opacity: 100%; transform: scale(1); } }",
-        8
+        `@keyframes navFadeIn {
+            0% {
+                opacity: 0%;
+                transform: scale(0.98);
+            }
+            100% {
+                opacity: 100%;
+                transform: scale(1);
+            }
+        }`
+        , 8
     );
 
     sheet.insertRule(
-        ".nav__closeButton { width: 40px; height: 40px; position: absolute; top: 0; right: 0; margin: 25px 25px; }",
-        9
+        `.nav__closeButton {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 25px 25px;
+        }`
+        , 9
     );
 
     sheet.insertRule(
-        "@media screen and (min-width: 800px) { .nav__closeButton { display: none; } }",
-        10
+        `@media screen and (min-width: 800px) {
+            .nav__closeButton {
+                display: none;
+            }
+        }`
+        , 10
     );
 
     sheet.insertRule(
-        ".buttonAnimation { opacity: 0%; animation-name: buttonFadeIn; animation-duration: 0.1s; animation-delay: 0.2s; animation-fill-mode: both; }",
-        11
+        `.buttonAnimation {
+            opacity: 0%;
+            animation-name: buttonFadeIn;
+            animation-duration: 0.1s;
+            animation-delay: 0.2s;
+            animation-fill-mode: both;
+        }`
+        , 11
     );
 
     sheet.insertRule(
-        "@keyframes buttonFadeIn { 100% { opacity: 100%; } }",
-        12
+        `@keyframes buttonFadeIn {
+            100% {
+                opacity: 100%;
+            }
+        }`
+        , 12
     );
 }
 
 function UpdateNavMenuVisibility(width) {
-    
+    if(width.matches)
+        CloseNavMenu();
 }
 
 function OpenNavMenu() {
-    
+    for(const child of main.children) {
+        if(child.classList.contains("nav"))
+            continue;
+        child.classList.add("backgroundAnimation");
+    }
+
+    closeButton.classList.add("buttonAnimation");
+    nav.classList.add("navAnimation");
+    root.classList.add("scrollLock");
 }
 
 function CloseNavMenu() {
+    for(const child of main.children) {
+        child.classList.remove("backgroundAnimation");
+    }
 
+    closeButton.classList.remove("buttonAnimation");
+    nav.classList.remove("navAnimation");
+    root.classList.remove("scrollLock");
 }
