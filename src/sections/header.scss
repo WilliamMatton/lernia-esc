@@ -28,23 +28,7 @@
     }
 }
 
-.nav {
-    width: 84%;
-    height: 72px;
-    padding: 0 8%;
-    display: none;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: $specification_color_dark;
-
-    @include from-width($screen_width_800) {
-        display: flex;
-    }
-}
-
 .nav__link {
-    font-size: 24px;
-    font-weight: bold;
     text-decoration: none;
     color: white;
 }
