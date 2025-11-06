@@ -103,6 +103,16 @@ function CreateMobileNavMenuRules() {
     navMenuRule.style.setProperty("z-index", "2");
 
     sheet.insertRule(
+        `@media screen and (max-height: 400px) {
+            .nav {
+                font-size: 30px;
+                gap: 5%;
+            }
+        }`
+        , 7
+    );
+
+    sheet.insertRule(
         `.navAnimation {
             display: flex;
             flex-direction: column;
@@ -112,7 +122,7 @@ function CreateMobileNavMenuRules() {
             animation-duration: 0.2s;
             animation-delay: 0.1s;
         }`
-        , 7
+        , 8
     );
 
     sheet.insertRule(
@@ -125,7 +135,7 @@ function CreateMobileNavMenuRules() {
                 opacity: 100%;
             }
         }`
-        , 8
+        , 9
     );
 
     sheet.insertRule(
@@ -137,7 +147,7 @@ function CreateMobileNavMenuRules() {
             right: 0;
             margin: 25px 25px;
         }`
-        , 9
+        , 10
     );
 
     sheet.insertRule(
@@ -146,7 +156,7 @@ function CreateMobileNavMenuRules() {
                 display: none;
             }
         }`
-        , 10
+        , 11
     );
 
     sheet.insertRule(
@@ -157,7 +167,7 @@ function CreateMobileNavMenuRules() {
             animation-delay: 0.2s;
             animation-fill-mode: both;
         }`
-        , 11
+        , 12
     );
 
     sheet.insertRule(
@@ -166,7 +176,7 @@ function CreateMobileNavMenuRules() {
                 opacity: 100%;
             }
         }`
-        , 12
+        , 13
     );
 }
 
