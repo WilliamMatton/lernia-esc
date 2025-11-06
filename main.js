@@ -1,5 +1,6 @@
 const sheet = document.styleSheets[1];
 const root = document.querySelector("html");
+const body = document.querySelector("body");
 const main = document.querySelector(".app");
 const header = document.querySelector(".header");
 const nav = document.querySelector(".nav");
@@ -30,7 +31,14 @@ window.addEventListener("load", () => {
     nav.prepend(closeButton);
 
     sheet.insertRule(
-        `.backgroundAnimation {
+        `.backgroundAnimation::before {
+            content: "";
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
             animation-name: backgroundFadeOut;
             animation-duration: 0.1s;
             animation-fill-mode: both;
@@ -41,7 +49,7 @@ window.addEventListener("load", () => {
     sheet.insertRule(
         `@keyframes backgroundFadeOut {
             100% {
-                opacity: 60%;
+                background: rgba(255, 255, 255, 0.6);
             }
         }`,
         sheet.cssRules.length
@@ -92,13 +100,13 @@ function CreateMobileNavMenuRules() {
     navMenuRule.style.setProperty("font-weight", "bold");
     navMenuRule.style.setProperty("background-color", "#011827");
     navMenuRule.style.setProperty("box-shadow", "0px 0px 20px rgba(0, 0, 0, 0.4)");
+    navMenuRule.style.setProperty("z-index", "2");
 
     sheet.insertRule(
         `.navAnimation {
             display: flex;
             flex-direction: column;
             opacity: 0;
-            z-index: 1;
             animation-name: navFadeIn;
             animation-fill-mode: both;
             animation-duration: 0.2s;
@@ -110,12 +118,11 @@ function CreateMobileNavMenuRules() {
     sheet.insertRule(
         `@keyframes navFadeIn {
             0% {
-                opacity: 0%;
                 transform: scale(0.98);
             }
             100% {
-                opacity: 100%;
                 transform: scale(1);
+                opacity: 100%;
             }
         }`
         , 8
@@ -169,23 +176,17 @@ function UpdateNavMenuVisibility(width) {
 }
 
 function OpenNavMenu() {
-    for(const child of main.children) {
-        if(child.classList.contains("nav"))
-            continue;
-        child.classList.add("backgroundAnimation");
-    }
-
-    closeButton.classList.add("buttonAnimation");
-    nav.classList.add("navAnimation");
+    body.classList.add("backgroundAnimation");
     root.classList.add("scrollLock");
+
+    nav.classList.add("navAnimation");
+    closeButton.classList.add("buttonAnimation");
 }
 
 function CloseNavMenu() {
-    for(const child of main.children) {
-        child.classList.remove("backgroundAnimation");
-    }
-
-    closeButton.classList.remove("buttonAnimation");
-    nav.classList.remove("navAnimation");
+    body.classList.remove("backgroundAnimation");
     root.classList.remove("scrollLock");
+
+    nav.classList.remove("navAnimation");
+    closeButton.classList.remove("buttonAnimation");
 }
