@@ -1,7 +1,10 @@
 const root = document.querySelector("html");
 const body = document.querySelector("body");
+const main = document.querySelector("main");
 const header = document.querySelector(".header");
 const nav = document.querySelector(".nav");
+let menu;
+let menuLinks = [];
 let navMenuButton;
 let closeButton;
 
@@ -12,6 +15,23 @@ navMenuPopupMaxSize.addEventListener("change", () => {
 });
 
 window.addEventListener("load", () => {
+    menu = document.createElement("menu");
+    main.prepend(menu);
+    menu.classList.add("menu");
+
+    for(i = 0; i < nav.children.length; i++) {
+        const menuItem = document.createElement("li");
+        menuItem.classList.add("menu__listItem");
+
+        const link = document.createElement("a");
+        menuLinks.push(link);
+        menuLinks[i].href = "";
+        menuLinks[i].classList.add("menu__link");
+        menuLinks[i].innerText = nav.children[i].innerText;
+        menuItem.appendChild(menuLinks[i]);
+        menu.appendChild(menuItem);
+    }
+
     navMenuButton = document.createElement("input");
     navMenuButton.type = "image";
     navMenuButton.src = "resources/hamburgermenu.png";
@@ -24,9 +44,9 @@ window.addEventListener("load", () => {
     closeButton.type = "image";
     closeButton.src = "resources/close.png";
     closeButton.alt = "Close button";
-    closeButton.classList.add("nav__closeButton");
+    closeButton.classList.add("menu__closeButton");
     closeButton.addEventListener("click", CloseNavMenu);
-    nav.prepend(closeButton);
+    menu.prepend(closeButton);
 });
 
 function UpdateNavMenuVisibility(width) {
@@ -38,7 +58,7 @@ function OpenNavMenu() {
     body.classList.add("backgroundAnimation");
     root.classList.add("scrollLock");
 
-    nav.classList.add("navAnimation");
+    menu.classList.add("menuAnimation");
     closeButton.classList.add("buttonAnimation");
 }
 
@@ -46,6 +66,6 @@ function CloseNavMenu() {
     body.classList.remove("backgroundAnimation");
     root.classList.remove("scrollLock");
 
-    nav.classList.remove("navAnimation");
+    menu.classList.remove("menuAnimation");
     closeButton.classList.remove("buttonAnimation");
 }

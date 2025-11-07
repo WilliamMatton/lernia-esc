@@ -39,21 +39,7 @@
 }
 
 .nav {
-    width: calc(100vw - 40px);
-    height: calc(100vh - 40px);
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 20px;
-    font-size: 36px;
-    font-weight: bold;
-    background-color: $specification_color_dark;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.40);
-    z-index: 2;
 
     @include from-width($screen_width_800) {
         width: 84%;
@@ -67,59 +53,8 @@
         font-size: 24px;
         box-shadow: none;
         padding: 0 8%;
-    }
-
-    @include until-height(400px) {
-        font-size: 30px;
-        gap: 5%;
-    }
-}
-
-.navAnimation {
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    animation-name: navFadeIn;
-    animation-fill-mode: both;
-    animation-duration: 0.2s;
-    animation-delay: 0.1s;
-}
-
-@keyframes navFadeIn {
-    0% {
-        transform: scale(0.98);
-    }
-    
-    100% {
-        transform: scale(1);
-        opacity: 100%;
-    }
-}
-
-.nav__closeButton {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 25px 25px;
-
-    @include from-width($screen_width_800) {
-        display: none;
-    }
-}
-
-.buttonAnimation {
-    opacity: 0%;
-    animation-name: buttonFadeIn;
-    animation-duration: 0.1s;
-    animation-delay: 0.2s;
-    animation-fill-mode: both;
-}
-
-@keyframes buttonFadeIn {
-    100% {
-        opacity: 100%;
+        font-weight: bold;
+        background-color: $specification_color_dark;
     }
 }
 
