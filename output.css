@@ -27,8 +27,33 @@
   }
 }
 
+.header__mobileMenu {
+  width: 51px;
+  height: 32px;
+  margin: 27px 20px 0 auto;
+}
+@media screen and (min-width: 800px) {
+  .header__mobileMenu {
+    display: none;
+  }
+}
+
 .nav {
+  width: calc(100vw - 40px);
+  height: calc(100vh - 40px);
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 20px;
+  font-size: 36px;
+  font-weight: bold;
+  background-color: #011827;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 @media screen and (min-width: 800px) {
   .nav {
@@ -43,10 +68,61 @@
     font-size: 24px;
     box-shadow: none;
     padding: 0 8%;
-    background-color: #011827;
+  }
+}
+@media screen and (max-height: 400px) {
+  .nav {
+    font-size: 30px;
+    gap: 5%;
   }
 }
 
+.navAnimation {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation-name: navFadeIn;
+  animation-fill-mode: both;
+  animation-duration: 0.2s;
+  animation-delay: 0.1s;
+}
+
+@keyframes navFadeIn {
+  0% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+.nav__closeButton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 25px 25px;
+}
+@media screen and (min-width: 800px) {
+  .nav__closeButton {
+    display: none;
+  }
+}
+
+.buttonAnimation {
+  opacity: 0%;
+  animation-name: buttonFadeIn;
+  animation-duration: 0.1s;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+@keyframes buttonFadeIn {
+  100% {
+    opacity: 100%;
+  }
+}
 .nav__link {
   text-decoration: none;
   color: white;
@@ -552,4 +628,27 @@ body {
 
 .app {
   font-family: "Roboto";
+}
+
+.backgroundAnimation::before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation-name: backgroundFadeOut;
+  animation-duration: 0.1s;
+  animation-fill-mode: both;
+}
+
+@keyframes backgroundFadeOut {
+  100% {
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+.scrollLock {
+  height: 100%;
+  overflow: hidden;
 }

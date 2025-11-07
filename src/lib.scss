@@ -21,6 +21,12 @@ $screen_width_1280: 1280px;
     }
 }
 
+@mixin until-height($max-height) {
+    @media screen and (max-height: $max-height) {
+        @content;
+    }
+}
+
 @mixin button-template {
     border: none;
     border-radius: 4px;
